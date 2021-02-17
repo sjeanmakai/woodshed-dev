@@ -1,0 +1,74 @@
+@import "../helpers/variables";
+
+.side-bar {
+  height: 110vh;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid;
+  border-radius: 0;
+  border-color: $medium-grey;
+  background-color: $dark-charcoal;
+  transition: 0.8s ease;
+}
+
+.sidebar-menu-link-wrapper {
+  text-align: center;
+  height: 80px;
+  margin-bottom: 10%;
+}
+
+.sidebar-menu-link {
+  color: $yellow;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.sidebar-menu-link:hover { 
+  padding-bottom: 10px;
+  border-bottom: 2px solid $sea-green;
+  border-radius: 2px;
+}
+
+.login-link-wrapper {
+  text-align: center;
+}
+
+.logout-link-wrapper {
+  margin-top: 150%;
+  text-align: center;
+  height: 80px;
+}
+
+.logout-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.logout-link:hover { 
+  padding-bottom: 10px;
+  border-bottom: 2px solid $sea-green;
+  border-radius: 2px;
+}
+
+.woodshed-title-wrapper {
+  height: 100px;
+  padding: 20px;
+  margin-left: -6%;
+}
+
+.woodshed-title {
+  text-align: center;
+  width: 200px;
+  color: #f9e559;
+  font-size: 38px;
+  margin-left: -4%;
+  margin-top: 3%;
+  line-height: 20px;
+  padding-top: 5px;
+}
+
+.title-text {
+  font-size: 16px;
+  color: #fff;
+  font-style: italic;
+}

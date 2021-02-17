@@ -1,0 +1,33 @@
+// import color variables for mixins
+@import "../helpers/variables";
+
+@mixin form-centerer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin primary-btn-theme {
+  background-color: $violet;
+  width: 423px;
+  height: 60px;
+  border-radius: 4px;
+  outline: none;
+  color: #fff;
+  font-size: 20px;
+}
+
+@mixin form-input-theme {
+  background-color: #fff;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 2px solid $sea-green;
+  width: 400px;
+  height: 60px;
+  outline: none;
+  color: $charcoal;
+  font-size: 20px;
+  padding-left: 20px;
+}

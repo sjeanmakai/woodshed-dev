@@ -1,0 +1,36 @@
+@import "./helpers/variables";
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  font-family: $spartan;
+  overflow: hidden;
+}
+
+.login-message {
+  margin-top: 20%;
+  margin-left: 15%;
+  padding: 40px;
+  font-size: 24px;
+  color: $charcoal;
+  width: 1000px;
+}
+
+.login-message div {
+  font-style: italic;
+  margin-bottom: 5%;
+}
+
+.login-message a {
+  margin-left: 33%;
+  color: $sea-green;
+  text-decoration: none;
+}
+
+.login-message a:hover {
+  color: $sea-green-hover;
+}

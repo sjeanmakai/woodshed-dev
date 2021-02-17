@@ -1,0 +1,87 @@
+@import "../components/buttons";
+@import "../helpers/variables";
+@import "../helpers/mixins";
+
+.login-link {
+  @include form-centerer;
+  margin-top: 39%;
+  color: $sea-green;
+  text-decoration: none;
+}
+
+.login-link:hover {
+  color: $sea-green-hover;
+}
+
+.help-block {
+  margin-top: 5px;
+  font-size: 16px;
+  width: 400px;
+  margin-left: 18%;
+  color: $opal;
+  position: absolute;
+}
+
+.login-btn {
+  background-color: $sea-green;
+  width: 400px;
+  height: 50px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 14px;
+  margin-top: 10%;
+  margin-left: 50%;
+  transform: translate(-50%);
+}
+
+.login-btn:hover {
+  background-color: $sea-green-hover;
+}
+
+.login-form-container {
+  @include form-centerer;
+  width: 600px;
+  height: 400px;
+  border: 2px solid;
+  border: none;
+  border-radius: 2px;
+  padding-top: 1%;
+}
+
+.login-form-input {
+  margin-top: 5%;
+  margin-left: 50%;
+  transform: translate(-50%);
+  @include form-input-theme;
+}
+
+.login-form-input::placeholder {
+  color: lightgrey;
+}
+
+.login-alert {
+  margin-top: 15%;
+  margin-left: 80%;
+}
+
+.alert.alert-danger-login {
+  width: 400px;
+  height: 50px;
+  background-color: rgb(216, 124, 124);
+  color: #fff;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 50px;
+}
+
+.alert.alert-success-login {
+  width: 400px;
+  height: 50px;
+  background-color: $sea-green-hover;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 50px;
+}

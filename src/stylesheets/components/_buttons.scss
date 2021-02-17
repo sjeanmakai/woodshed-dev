@@ -1,0 +1,5 @@
+@import "../helpers/mixins";
+
+.primary-btn {
+   @include primary-btn-theme;
+}

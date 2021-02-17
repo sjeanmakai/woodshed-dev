@@ -1,0 +1,98 @@
+@import "../helpers/variables";
+
+.mng-wrapper {
+  margin-left: 13%;
+  width: 100%;
+  position: absolute;
+}
+
+.sessions-wrapper {
+  width: 83%;
+}
+
+.sessions-wrapper nav {
+  margin-left: 5%;
+  display: flex;
+}
+
+.week-text {
+  background-color: $light-grey;
+  font-size: 24px;
+  margin-left: 3%;
+  margin-top: 5%;
+  width: 100%;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 30px;
+  font-style: italic;
+  color: $charcoal;
+}
+
+.week-btns {
+  display: flex;
+  width: 300px;
+  margin-left: 78%;
+  margin-top: 3.5%;
+  position: absolute; 
+}
+
+.week-btns button {
+  background-color: $light-grey;
+  height: 35px;
+  width: 50px;
+  border: none;
+  border-radius: 5px;
+  font-size: 24px;
+  color: $charcoal;
+  margin-right: 3%;
+  outline: none;
+}
+
+.sessions-message {
+  margin-top: 8%;
+  margin-left: 3%;
+  width: 100%;
+  height: 450px;
+  background-color: $light-grey;
+  border: 1px solid $medium-grey;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 24px;
+}
+
+.sessions-message a {
+  line-height: 50px;
+  color: $charcoal;
+}
+
+.sessions-message div {
+  margin-top: 20%;
+}
+
+.mng-alert {
+  margin-left: 27%;
+}
+
+.alert.alert-danger-update {
+  width: 400px;
+  height: 50px;
+  background-color: rgb(216, 124, 124);
+  color: #fff;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 50px;
+  position: absolute;
+  margin-top: 20%;
+}
+
+.alert.alert-success-update {
+  width: 400px;
+  height: 50px;
+  background-color: $sea-green-hover;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 50px;
+  position: absolute;
+  margin-top: 8%;
+}

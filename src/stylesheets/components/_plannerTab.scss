@@ -1,0 +1,20 @@
+@import "../helpers/variables";
+
+.pt {
+  background-color: $sea-green;
+  border-left: 1px solid $charcoal;
+  border-top: 1px solid $charcoal;
+  border-right: 1px solid $charcoal;
+  width: 100px;
+  padding: 10px;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 20px;
+  color: #fff;
+  margin-right: 0.5%;
+  margin-top: 5%;
+}
+
+.pt:hover {
+  background-color: $sea-green-hover;
+}

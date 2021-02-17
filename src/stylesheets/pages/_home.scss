@@ -1,0 +1,29 @@
+@import "../helpers/variables";
+
+.success-quote-wrapper {
+  margin-left: 10%;
+  margin-top: 10%;
+  width: 1000px;
+}
+
+.welcome-message {
+  color: $sea-green;
+  font-size: 76px;
+}
+
+.success-quote {
+  margin-top: 10%;
+  color: $charcoal;
+  font-style: Italic;
+  font-size: 32px;
+}
+
+.user-name {
+  color: $charcoal;
+  font-size: 82px;
+  margin-left: 25%;
+}
+
+.s1 {
+  color: $sea-green-hover;
+}
