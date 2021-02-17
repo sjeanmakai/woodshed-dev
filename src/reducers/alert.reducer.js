@@ -11,6 +11,9 @@ import {
   UPDATE_ALERT_SUCCESS,
   UPDATE_ALERT_ERROR,
   UPDATE_ALERT_CLEAR,
+  DELETE_ALERT_SUCCESS,
+  DELETE_ALERT_ERROR,
+  DELETE_ALERT_CLEAR,
 } from "../helpers/types";
 
 export function alertReducer(state = {}, action) {
@@ -70,6 +73,20 @@ export function alertReducer(state = {}, action) {
         message: action.message,
       };
     case UPDATE_ALERT_CLEAR:
+      return {};
+    case DELETE_ALERT_SUCCESS:
+      return {
+        ...state,
+        type: "alert-success-delete",
+        message: action.message,
+      };
+    case DELETE_ALERT_ERROR:
+      return {
+        ...state,
+        type: "alert-danger-delete",
+        message: action.message,
+      };
+    case DELETE_ALERT_CLEAR:
       return {};
     default:
       return state;

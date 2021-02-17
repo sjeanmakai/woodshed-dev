@@ -1,6 +1,7 @@
 import { history } from "../helpers/history.js";
 import { planAlertActions } from "../actions/plan_alert.actions";
 import { updateAlertActions } from "../actions/update_alert.actions";
+import { deleteAlertActions } from "../actions/delete_alert.actions";
 import {
   CREATE_SESSION,
   CREATE_SESSION_SUCCESS,
@@ -8,6 +9,9 @@ import {
   UPDATE_SESSION,
   UPDATE_SESSION_SUCCESS,
   UPDATE_SESSION_ERROR,
+  DELETE_SESSION,
+  DELETE_SESSION_SUCCESS,
+  DELETE_SESSION_ERROR,
   GET_SESSIONS,
   GET_SESSIONS_SUCCESS,
   GET_SESSIONS_ERROR,
@@ -123,6 +127,47 @@ export const updateSession = (
   }
   function error() {
     return { type: UPDATE_SESSION_ERROR };
+  }
+};
+
+export const deleteSession = (
+  sessionDate
+) => async (dispatch) => {
+  try {
+    dispatch(
+      request({
+        sessionDate
+      })
+    );
+
+    const res = await axios.put(
+      `http://localhost:8000/sessions/:${sessionDate}`
+    );
+    dispatch(success(res.data));
+    dispatch(
+      deleteAlertActions.success("You have successfully deleted your session!")
+    );
+    setTimeout(() => {
+      dispatch(deleteAlertActions.clear());
+    }, 2000);
+  } catch (err) {
+    dispatch(error("Session could not be deleted"));
+    dispatch(
+      deleteAlertActions.error("There was a problem deleting the session.")
+    );
+    setTimeout(() => {
+      dispatch(deleteAlertActions.clear());
+    }, 2000);
+  }
+
+  function request(payload) {
+    return { type: DELETE_SESSION, payload };
+  }
+  function success(payload) {
+    return { type: DELETE_SESSION_SUCCESS, payload };
+  }
+  function error() {
+    return { type: DELETE_SESSION_ERROR };
   }
 };
 

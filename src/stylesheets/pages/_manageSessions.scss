@@ -96,3 +96,26 @@
   position: absolute;
   margin-top: 8%;
 }
+
+.alert.alert-danger-delete {
+  width: 400px;
+  height: 50px;
+  background-color: rgb(216, 124, 124);
+  color: #fff;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 50px;
+  position: absolute;
+  margin-top: 20%;
+}
+
+.alert.alert-success-delete {
+  width: 400px;
+  height: 50px;
+  background-color: $sea-green-hover;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 50px;
+  position: absolute;
+  margin-top: 8%;
+}

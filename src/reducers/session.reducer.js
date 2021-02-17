@@ -5,6 +5,9 @@ import {
   UPDATE_SESSION,
   UPDATE_SESSION_SUCCESS,
   UPDATE_SESSION_ERROR,
+  DELETE_SESSION,
+  DELETE_SESSION_SUCCESS,
+  DELETE_SESSION_ERROR,
   GET_SESSIONS,
   GET_SESSIONS_SUCCESS,
   GET_SESSIONS_ERROR,
@@ -48,6 +51,23 @@ export function sessionReducer(state = {}, action) {
       return {
         ...state,
         error: "There was an error updating the session.",
+      };
+    case DELETE_SESSION:
+      return {
+        ...state,
+        deletingSession: false,
+        delete_payload: action.payload,
+      };
+    case DELETE_SESSION_SUCCESS:
+      return {
+        ...state,
+        deletedSession: true,
+        deleted_session: action.payload,
+      };
+    case DELETE_SESSION_ERROR:
+      return {
+        ...state,
+        error: "There was an error deleting the session.",
       };
     case GET_SESSIONS:
       return {

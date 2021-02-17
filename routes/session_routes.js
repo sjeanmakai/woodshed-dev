@@ -46,6 +46,22 @@ module.exports = function (app, db) {
       }
     );
   });
+  // delete session
+  app.delete("/sessions/:session_date", async (req, res) => {
+    const query = { session_date: req.params.id };
+    Session.findOneAndDelete(
+      query,
+      function (err, result) {
+        if (err) {
+          res.status(500).json({ error: "An error occured" });
+        } else if (!result) {
+          res.status(404).json({ error: "No sessions found with this date" });
+        } else {
+          res.status(200).json(result);
+        }
+      }
+    );
+  });
   // get sessions within date range
   app.get("/sessions/:author_id/:start_date/:end_date", async (req, res) => {
     const author_id = req.params.id;

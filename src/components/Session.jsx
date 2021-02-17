@@ -1,16 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { ReactSession } from "react-client-session";
-import { getSessionByDate } from "../actions/session.actions";
-import { updateSession } from "../actions/session.actions";
+import { updateSession , deleteSession , getSessionByDate} from "../actions/session.actions";
 import "../stylesheets/components/_session.scss";
 import PropTypes from "prop-types";
 
 const Session = ({ data }) => {
   const user = ReactSession.get("user");
   const dispatch = useDispatch();
-
-  const sbd = useSelector((state) => state.sessionReducer.user_session_by_date);
 
   const initialState = {
     sessionDate: new Date(data.sessionDate),
@@ -26,24 +23,6 @@ const Session = ({ data }) => {
       goal5: data.objectives.goal5,
     },
     notes: data.notes,
-    hours: data.hours,
-    minutes: data.minutes,
-  };
-
-  const updatedState = {
-    sessionDate: new Date(data.sessionDate),
-    formattedDate: new Date(data.sessionDate).toLocaleDateString("en-US"),
-    objectives: {
-      rep1: data.objectives.rep1,
-      rep2: data.objectives.rep2,
-      rep3: data.objectives.rep3,
-      goal1: data.objectives.goal1,
-      goal2: data.objectives.goal2,
-      goal3: data.objectives.goal3,
-      goal4: data.objectives.goal4,
-      goal5: data.objectives.goal5,
-    },
-    notes: sbd ? sbd[0].notes : data.notes,
     hours: data.hours,
     minutes: data.minutes,
   };
@@ -115,6 +94,11 @@ const Session = ({ data }) => {
     }
   };
 
+  const handleDelete = () => {
+    dispatch(deleteSession(sessionDate));
+    clearState();
+  }
+
   return (
     <div className="session-wrapper">
       <div className="date-wrapper">
@@ -126,8 +110,10 @@ const Session = ({ data }) => {
           autocomplete="off"
           readOnly={true}
         />
+        <div onClick={handleDelete}>
+          <img style={{height: "30px", marginLeft: "66%", marginTop: "10px"}} src="https://image.flaticon.com/icons/png/512/61/61848.png" alt="delete"></img>
+        </div> 
       </div>
-
       <div className="grid-wrapper">
         <div className="column-1">
           <div className="rep-wrapper">
