@@ -122,12 +122,11 @@ const Session = ({ data }) => {
         <input
           name="date"
           value={formattedDate}
-          className="add-item-input"
+          className="session-date-input"
           autocomplete="off"
           readOnly={true}
         />
       </div>
-
       <div className="grid-wrapper">
         <div className="column-1">
           <div className="rep-wrapper">
