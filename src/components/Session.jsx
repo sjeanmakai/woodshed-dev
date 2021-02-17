@@ -96,7 +96,6 @@ const Session = ({ data }) => {
 
   const handleDelete = () => {
     dispatch(deleteSession(sessionDate));
-    clearState();
   }
 
   return (
@@ -110,8 +109,8 @@ const Session = ({ data }) => {
           autocomplete="off"
           readOnly={true}
         />
-        <div onClick={handleDelete}>
-          <img style={{height: "30px", marginLeft: "66%", marginTop: "10px"}} src="https://image.flaticon.com/icons/png/512/61/61848.png" alt="delete"></img>
+        <div onClick={() => handleDelete()}>
+          <img style={{height: "30px", marginLeft: "770px", marginTop: "10px"}} src="https://image.flaticon.com/icons/png/512/61/61848.png" alt="delete"></img>
         </div> 
       </div>
       <div className="grid-wrapper">
